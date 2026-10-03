@@ -1,0 +1,10 @@
+{
+  "name": "kids-cotton-sleep-sack",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.mjs\"",
+    "validate": "node tests/validate.mjs",
+    "render": "node tests/render.mjs"
+  }
+}
