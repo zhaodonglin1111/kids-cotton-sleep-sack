@@ -1,0 +1,71 @@
+<svg id="piecesArt" viewBox="0 0 1400 1900" role="img" aria-label="裁片详图（可穿修正版）：前后身带 V 形裆口、袖子、裤腿、帽子">
+  <defs>
+    <pattern id="paq" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path class="q" d="M0 0V16"/><path class="q" d="M0 0H16"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 8 8" refX="6.6" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#37637a"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="1900" fill="#fffdf8"/>
+  <text class="lab-lite" x="20" y="28">单位：cm ｜ 单层净尺寸，裁布每边另加 1.5cm 缝份 ｜ 图中 10px = 1cm ｜ 下摆带 V 形裆口</text>
+
+  <g id="pieceBody">
+    <text class="lab-b" x="40" y="72">前身片 / 后身片（各 1 片，下摆带 V 形裆口）</text>
+    <text class="lab-lite" x="40" y="92">胸围 78（前后各 39）｜ 肩宽 35 ｜ 袖窿深 21.5 ｜ 前领深 9 / 后领深 3 ｜ 裆口宽 12 ｜ 每片腿口 9（前后合 18）</text>
+
+    <path class="ln" id="bodyFrontOutline" d="M560 300 L180 340 L130 515 L130 1240 L175 1400 L265 1400 L500 1400 L560 1140 L620 1400 L855 1400 L945 1400 L990 1240 L990 515 Z" fill="#f3eadb" stroke="#c6ad8b" stroke-width="2.6"/>
+    <path id="bodyFrontQuilt" d="M560 300 L180 340 L130 515 L130 1240 L175 1400 L265 1400 L500 1400 L560 1140 L620 1400 L855 1400 L945 1400 L990 1240 L990 515 Z" fill="url(#paq)" opacity=".7"/>
+    <path class="ln" id="bodyBackOutline" d="M560 300 L560 330 L940 330 L990 515 L990 1240 L945 1400 L855 1400 L620 1400 L560 1140 L500 1400 L265 1400 L175 1400 L130 1240 L130 515 Z" fill="#f3eadb" stroke="#c6ad8b" stroke-width="2.6"/>
+    <path id="bodyBackQuilt" d="M560 300 L560 330 L940 330 L990 515 L990 1240 L945 1400 L855 1400 L620 1400 L560 1140 L500 1400 L265 1400 L175 1400 L130 1240 L130 515 Z" fill="url(#paq)" opacity=".7"/>
+
+    <path d="M560 300 L560 1400" stroke="#cbbca4" stroke-width="2" stroke-dasharray="8 6"/>
+    <text class="dim" x="360" y="150">前身片 / 后身片</text>
+
+    <g class="dimline"><path d="M90 300 H130"/><path d="M90 515 H130"/>
+      <path d="M98 300 V515" marker-start="url(#arrow)" marker-end="url(#arrow)"/></g>
+    <text class="dim" x="66" y="410" transform="rotate(-90 66 410)">袖窿深 21.5</text>
+    <g class="dimline"><path d="M130 256 H560" marker-start="url(#arrow)" marker-end="url(#arrow)"/></g>
+    <text class="dim" x="270" y="248">半胸宽 39（胸围 78）</text>
+    <g class="dimline"><path d="M175 1460 H265" marker-start="url(#arrow)" marker-end="url(#arrow)"/></g>
+    <text class="dim" x="180" y="1484">腿口 9</text>
+    <g class="dimline"><path d="M500 1460 H620" marker-start="url(#arrow)" marker-end="url(#arrow)"/></g>
+    <text class="dim" x="510" y="1484">裆口 12</text>
+    <g class="dimline"><path d="M560 1180 V1140"/><path d="M560 1180 V1140"/>
+      <path d="M560 1180 V1240" marker-start="url(#arrow)" marker-end="url(#arrow)"/></g>
+    <text class="dim" x="570" y="1215">裆口深 10</text>
+    <text class="dim" x="380" y="380">前领深 9</text>
+    <text class="lab-lite" x="575" y="330" fill="#5f7350">后领深 3</text>
+    <text class="lab-lite" x="300" y="1390" fill="#5f7350">V 形裆口</text>
+  </g>
+
+  <line x1="20" y1="1560" x2="1380" y2="1560" stroke="#e0d5c3" stroke-width="1.5" stroke-dasharray="10 8"/>
+
+  <g id="pieceSleeves">
+    <text class="lab-b" x="40" y="1610">袖子 × 2（左右对称）</text>
+    <text class="lab-lite" x="40" y="1630">袖根 28（与上袖边等长）｜ 袖长 32 ｜ 腕口 22</text>
+    <path class="ln" id="sleeveOutline" d="M220 1660 L500 1660 L440 1980 L220 1980 Z" fill="#eef1e6" stroke="#9aab86" stroke-width="2.5"/>
+    <path id="sleeveQuilt" d="M220 1660 L500 1660 L440 1980 L220 1980 Z" fill="url(#paq)" opacity=".45"/>
+    <g class="dimline"><path d="M200 1660 H500" marker-start="url(#arrow)" marker-end="url(#arrow)"/></g>
+    <text class="dim" x="290" y="1652">袖根 28</text>
+    <g class="dimline"><path d="M220 2010 H440" marker-start="url(#arrow)" marker-end="url(#arrow)"/></g>
+    <text class="dim" x="290" y="2034">腕口 22</text>
+    <g class="dimline"><path d="M180 1660 V1980" marker-start="url(#arrow)" marker-end="url(#arrow)"/></g>
+    <text class="dim" x="120" y="1830" transform="rotate(-90 120 1830)">袖长 32</text>
+    <text class="lab-lite" x="40" y="2070">上袖：袖根 28 与袖窿对齐，多的部分均匀吃进；两片对称裁。</text>
+  </g>
+
+  <g id="pieceLegs">
+    <text class="lab-b" x="780" y="1610">裤腿片 × 2</text>
+    <text class="lab-lite" x="780" y="1630">腿长 46 ｜ 腿根 18 ｜ 踝口 12 ｜ 与身片腿口 9 对齐</text>
+    <path class="ln" id="legOutline" d="M800 1660 L980 1660 L920 2120 L800 2120 Z" fill="#eef1e6" stroke="#9aab86" stroke-width="2.5"/>
+    <path id="legQuilt" d="M800 1660 L980 1660 L920 2120 L800 2120 Z" fill="url(#paq)" opacity=".45"/>
+    <g class="dimline"><path d="M780 1660 H980" marker-start="url(#arrow)" marker-end="url(#arrow)"/></g>
+    <text class="dim" x="860" y="1652">腿根 18</text>
+    <g class="dimline"><path d="M800 2150 H920" marker-start="url(#arrow)" marker-end="url(#arrow)"/></g>
+    <text class="dim" x="840" y="2174">踝口 12</text>
+    <g class="dimline"><path d="M760 1660 V2120" marker-start="url(#arrow)" marker-end="url(#arrow)"/></g>
+    <text class="dim" x="700" y="1890" transform="rotate(-90 700 1890)">腿长 46</text>
+    <text class="lab-lite" x="700" y="2210">身片腿口 9 + 裤腿片 18/2 = 18；前+后合 36，正好一圈腿围。</text>
+  </g>
+</svg>
