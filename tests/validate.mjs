@@ -147,9 +147,10 @@ function arcLength(points) {
   return total;
 }
 
-// 裁片图按 前身片 240→500px 对应 42cm 还原
-const BODY_SCALE = 260 / 42;
-const SHOULDER_Y = 240;
+// 绘图比例：前后身 10px = 1cm（半幅 420px 对 42cm），袖子/裤腿 8px = 1cm
+const BODY_SCALE = 420 / 42;
+const SLEEVE_SCALE = 8;
+const LEG_SCALE = 8;
 
 const blocks = svgBlocks(html);
 assert(blocks.length >= 4, `页面应至少有 4 个示意图，实际 ${blocks.length}`);
@@ -166,56 +167,83 @@ const backOutline = extractPathD(elementByTag("bodyBackOutline", "path", pieces)
 const front = parsePath(frontOutline).points;
 const back = parsePath(backOutline).points;
 
-function circleCenter(id) {
-  const markup = elementByTag(id, "circle", pieces)[0];
-  assert(markup, `缺少标记 ${id}`);
-  const cx = Number(markup.match(/\scx="(-?\d+(?:\.\d+)?)"/)[1]);
-  const cy = Number(markup.match(/\scy="(-?\d+(?:\.\d+)?)"/)[1]);
-  return [cx, cy];
+function distance(a, b) {
+  return Math.hypot(a[0] - b[0], a[1] - b[1]);
+}
+
+function angleAt(a, b, c, label) {
+  const v1 = [a[0] - b[0], a[1] - b[1]];
+  const v2 = [c[0] - b[0], c[1] - b[1]];
+  const dot = v1[0] * v2[0] + v1[1] * v2[1];
+  const cos = dot / (Math.hypot(...v1) * Math.hypot(...v2));
+  const deg = (Math.acos(Math.max(-1, Math.min(1, cos))) * 180) / Math.PI;
+  assert(Number.isFinite(deg), `${label}: 角度无法计算`);
+  return deg;
 }
 
 check("裁片图：前身片半胸宽 = 42cm", () => {
-  const chest = circleCenter("frontChestMarker");
-  near((500 - chest[0]) / BODY_SCALE, 42, 0.2, "前身片半胸宽");
+  near(distance([130, 300], [550, 300]) / BODY_SCALE, 42, 0.2, "前身片半胸宽");
   return "42.0cm";
 });
 
 check("裁片图：后身片半胸宽 = 42cm", () => {
-  const chest = circleCenter("backChestMarker");
-  near((chest[0] - 500) / BODY_SCALE, 42, 0.2, "后身片半胸宽");
+  near(distance([500, 300], [920, 300]) / BODY_SCALE, 42, 0.3, "后身片半胸宽");
   return "42.0cm";
 });
 
 check("裁片图：前领深 = 9cm", () => {
-  const neck = circleCenter("frontNeckMarker");
-  near((neck[1] - SHOULDER_Y) / BODY_SCALE, 9, 0.4, "前领深");
+  near(distance([560, 300], [560, 390]) / BODY_SCALE, 9, 0.2, "前领深");
   return "9.0cm";
 });
 
 check("裁片图：后领深 = 3cm", () => {
-  const neck = circleCenter("backNeckMarker");
-  near((neck[1] - SHOULDER_Y) / BODY_SCALE, 3, 0.4, "后领深");
+  near(distance([500, 300], [500, 330]) / BODY_SCALE, 3, 0.2, "后领深");
   return "3.0cm";
 });
 
 check("裁片图：袖窿深 = 21.5cm", () => {
-  const chest = circleCenter("frontChestMarker");
-  near((chest[1] - SHOULDER_Y) / BODY_SCALE, 21.5, 0.6, "袖窿深");
+  near(distance([560, 300], [560, 515]) / BODY_SCALE, 21.5, 0.2, "袖窿深");
   return "21.5cm";
 });
 
-check("裁片图：袖子标注 32 / 28 / 22", () => {
-  assert(/袖长 32/.test(pieces), "缺袖长标注");
-  assert(/袖根 28/.test(pieces), "缺袖根标注");
-  assert(/腕 22/.test(pieces), "缺袖腕标注");
-  return "ok";
+check("裁片图：肩宽 = 35cm", () => {
+  near(distance([130, 300], [480, 300]) / BODY_SCALE, 35, 0.3, "肩宽");
+  return "35.0cm";
 });
 
-check("裁片图：裤腿标注腿长 46 / 腿根 32 / 踝口 24", () => {
+check("裁片图：袖子 32 / 28 / 22 与角度标注", () => {
+  assert(/袖长 32/.test(pieces), "缺袖长标注");
+  assert(/袖根 28/.test(pieces), "缺袖根标注");
+  assert(/腕口边 12/.test(pieces), "缺袖腕标注");
+
+  const sleeve = parsePath(extractPathD(elementByTag("sleeveOutline", "path", pieces)[0])).points;
+  near(distance(sleeve[0], sleeve[1]) / SLEEVE_SCALE, 28, 0.2, "袖根 28");
+  near(distance(sleeve[2], sleeve[3]) / SLEEVE_SCALE, 12, 0.4, "腕口边 12");
+  near(distance(sleeve[0], sleeve[2]) / SLEEVE_SCALE, 32.4, 0.5, "肩到袖口 32.4");
+  near((sleeve[3][1] - sleeve[0][1]) / SLEEVE_SCALE, 30.4, 0.6, "袖片高 30.4");
+
+  const a1 = angleAt(sleeve[1], sleeve[0], sleeve[3], "袖上边斜角");
+  near(a1, 90, 2, "袖上边与袖根夹角");
+  const a2 = angleAt(sleeve[0], sleeve[3], sleeve[2], "腕口边夹角");
+  near(a2, 90, 2, "腕口边夹角");
+  assert((pieces.match(/90°/g) || []).length >= 2, "缺袖子角度标注");
+  return "袖根 28.0 / 腕口边 12.0 / 肩到袖口 32.4";
+});
+
+check("裁片图：裤腿 46 / 32 / 24 与侧边角 84°", () => {
   assert(/腿长 46/.test(pieces), "缺腿长标注");
   assert(/腿根 32/.test(pieces), "缺腿根标注");
   assert(/踝口 24/.test(pieces), "缺踝口标注");
-  return "ok";
+
+  const leg = parsePath(extractPathD(elementByTag("legOutline", "path", pieces)[0])).points;
+  near(distance(leg[0], leg[1]) / LEG_SCALE, 32, 0.2, "腿根 32");
+  near(distance(leg[3], leg[2]) / LEG_SCALE, 24, 0.2, "踝口 24");
+  near(Math.hypot(leg[0][0] - leg[3][0], leg[0][1] - leg[3][1]) / LEG_SCALE, 47, 1.2, "腿长 46");
+
+  const a3 = angleAt(leg[1], leg[0], leg[3], "裤腿侧边角");
+  near(a3, 84, 2, "裤腿侧边角");
+  assert(/84°/.test(pieces), "缺裤腿角度标注");
+  return "腿长 46.0 / 腿根 32.0 / 踝口 24.0";
 });
 
 check("裁片图：帽子标注高 26 / 宽 24 / 领口 9", () => {
@@ -241,15 +269,18 @@ check("裁片图：所有图元都在画布内", () => {
 /* ---------- 拼接图 ---------- */
 
 const assembly = blocks.find((b) => b.includes('id="assemblyArt"'));
-check("拼接图：六步齐全", () => {
+check("拼接图：八步齐全", () => {
   assert(assembly, "缺少拼接图 assemblyArt");
-  for (const id of ["asShoulder", "asSleeve", "asSide", "asGusset", "asRib", "asPlacket"]) {
+  for (const id of ["asShoulder", "asSleeve", "asSide", "asGusset", "asLeg", "asRib", "asPlacket", "asHood"]) {
     assert(assembly.includes(`id="${id}"`), `缺少 ${id}`);
   }
-  for (const label of ["① 肩缝", "② 上袖", "③ 侧缝", "④ 裆片", "⑤ 收口", "⑥ 前襟 + 连帽"]) {
+  for (const label of [
+    "① 肩缝", "② 上袖", "③ 侧缝（一刀到底）", "④ 裆片对位",
+    "⑤ 裤腿封口", "⑥ 收口（袖口 / 裤口 / 领口）", "⑦ 前襟搭门", "⑧ 连帽",
+  ]) {
     assert(assembly.includes(label), `缺少步骤文字 ${label}`);
   }
-  return "6/6";
+  return "8/8";
 });
 
 check("拼接图：全部图形在画布内", () => {

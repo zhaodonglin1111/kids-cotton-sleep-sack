@@ -1,0 +1,121 @@
+<svg id="assemblyArt" viewBox="0 0 1360 1600" role="img" aria-label="拼接详图：肩缝、上袖、侧缝、裆片、裤腿封口、收口、前襟搭门、连帽八步">
+  <defs>
+    <marker id="amk" viewBox="0 0 8 8" refX="6.6" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#5f7350"/>
+    </marker>
+  </defs>
+  <rect width="1360" height="1600" fill="#fffdf8"/>
+  <text class="lab-lite" x="20" y="26">虚线＝缝线位置 ｜ 圆点＝要对准的标记点 ｜ 数字＝这一片先缝哪条边</text>
+
+  <!-- ① 肩缝 -->
+  <g id="asShoulder">
+    <text class="lab-b" x="30" y="86">① 肩缝</text>
+    <path d="M40 120 L300 120 L300 160 L270 180 L70 180 Z" fill="#f3eadb" stroke="#c6ad8b" stroke-width="2"/>
+    <path d="M320 120 L580 120 L550 180 L350 180 L320 160 Z" fill="#f3eadb" stroke="#c6ad8b" stroke-width="2"/>
+    <path d="M40 120 L300 120" stroke="#b3643c" stroke-width="5" stroke-dasharray="10 6"/>
+    <path d="M320 120 L580 120" stroke="#b3643c" stroke-width="5" stroke-dasharray="10 6"/>
+    <path class="chev" d="M150 210 C240 230 380 230 470 210" marker-end="url(#amk)"/>
+    <circle cx="300" cy="120" r="6" fill="#5f7350"/>
+    <circle cx="320" cy="120" r="6" fill="#5f7350"/>
+    <text class="lab-lite" x="286" y="108">领口对位</text>
+    <text class="lab-lite" x="70" y="256">两片正面相对，沿肩线缝 1.5cm；缝份倒向后片</text>
+  </g>
+
+  <!-- ② 上袖 -->
+  <g id="asSleeve">
+    <text class="lab-b" x="720" y="86">② 上袖</text>
+    <path d="M730 120 L990 120 L990 160 L960 180 L760 180 Z" fill="#f3eadb" stroke="#c6ad8b" stroke-width="2"/>
+    <path d="M1010 120 L1230 120 L1170 240 L990 240 Z" fill="#eef1e6" stroke="#9aab86" stroke-width="2"/>
+    <circle cx="990" cy="180" r="7" fill="#5f7350"/>
+    <circle cx="1010" cy="180" r="7" fill="#5f7350"/>
+    <path class="chev" d="M1080 180 C1040 180 1010 196 998 216" marker-end="url(#amk)"/>
+    <text class="lab-lite" x="760" y="108">身体</text>
+    <text class="lab-lite" x="1060" y="110">袖子</text>
+    <text class="lab-lite" x="720" y="276">袖山中点对准「上袖点」，先固定中点，再往两边缝</text>
+    <text class="lab-lite" x="720" y="298">袖根略宽于袖窿，多的部分均匀吃进去</text>
+  </g>
+
+  <!-- ③ 侧缝 -->
+  <g id="asSide">
+    <text class="lab-b" x="30" y="436">③ 侧缝（一刀到底）</text>
+    <path d="M90 470 C140 470 190 490 210 540 L210 700 L90 700 Z" fill="#f3eadb" stroke="#c6ad8b" stroke-width="2"/>
+    <path d="M90 470 C40 470 20 490 20 540 L20 700 L90 700 Z" fill="#f3eadb" stroke="#c6ad8b" stroke-width="2"/>
+    <path d="M210 540 L210 700" stroke="#37637a" stroke-width="5" stroke-dasharray="10 6"/>
+    <path d="M20 540 L20 700" stroke="#37637a" stroke-width="5" stroke-dasharray="10 6"/>
+    <path class="chev" d="M300 560 C270 600 240 620 215 630" marker-end="url(#amk)"/>
+    <text class="lab-lite" x="60" y="500">袖口</text>
+    <text class="lab-lite" x="60" y="730">裤脚</text>
+    <text class="lab-lite" x="60" y="760">从袖口 → 腋下 → 裤脚一次连续车完，中间不要断线</text>
+  </g>
+
+  <!-- ④ 裆片对位 -->
+  <g id="asGusset">
+    <text class="lab-b" x="720" y="436">④ 裆片对位</text>
+    <path d="M760 470 L960 470 L960 700 L760 700 Z" fill="#f3eadb" stroke="#c6ad8b" stroke-width="2"/>
+    <text class="lab-lite" x="790" y="492">前片下摆</text>
+    <text class="lab-lite" x="790" y="690">后片下摆</text>
+    <rect x="985" y="550" width="70" height="80" rx="4" fill="#eef1e6" stroke="#9aab86" stroke-width="2"/>
+    <text class="lab-lite" x="1066" y="586">裆片 14×16</text>
+    <path d="M960 540 H985" stroke="#b3643c" stroke-width="4" stroke-dasharray="8 5"/>
+    <path d="M960 640 H985" stroke="#b3643c" stroke-width="4" stroke-dasharray="8 5"/>
+    <path d="M1055 550 L960 550" stroke="#37637a" stroke-width="4" stroke-dasharray="8 5"/>
+    <path d="M1055 630 L960 630" stroke="#37637a" stroke-width="4" stroke-dasharray="8 5"/>
+    <text class="lab-lite" x="720" y="736">裆片同时连前片、后片；前后各一片，缝成十字</text>
+  </g>
+
+  <!-- ⑤ 裤腿封口 -->
+  <g id="asLeg">
+    <text class="lab-b" x="30" y="790">⑤ 裤腿封口</text>
+    <path d="M60 824 L250 824 L250 1054 L60 1054 Z" fill="#eef1e6" stroke="#9aab86" stroke-width="2"/>
+    <path d="M255 824 L445 824 L445 1054 L255 1054 Z" fill="#eef1e6" stroke="#9aab86" stroke-width="2"/>
+    <path d="M250 824 L255 1054" stroke="#b3643c" stroke-width="5" stroke-dasharray="10 6"/>
+    <circle cx="250" cy="834" r="6" fill="#5f7350"/>
+    <circle cx="255" cy="834" r="6" fill="#5f7350"/>
+    <text class="lab-lite" x="60" y="1094">两条裤腿外侧各自缝到裆口，再与裆片接上</text>
+    <text class="lab-lite" x="60" y="1116">缝完后是两个完整的裤筒</text>
+  </g>
+
+  <!-- ⑥ 收口 -->
+  <g id="asRib">
+    <text class="lab-b" x="720" y="790">⑥ 收口（袖口 / 裤口 / 领口）</text>
+    <path d="M760 824 L950 824 L930 964 L780 964 Z" fill="#eef1e6" stroke="#9aab86" stroke-width="2"/>
+    <path d="M760 824 L950 824 L970 884 L740 884 Z" fill="#e3ebd8" stroke="#8fa179" stroke-width="2"/>
+    <path d="M740 884 L970 884" stroke="#5f7350" stroke-width="5" stroke-dasharray="10 6"/>
+    <path d="M760 824 L950 824" stroke="#cbbca4" stroke-width="2" stroke-dasharray="6 5"/>
+    <circle cx="790" cy="884" r="6" fill="#5f7350"/>
+    <circle cx="920" cy="884" r="6" fill="#5f7350"/>
+    <text class="lab-lite" x="742" y="812">罗纹对折线</text>
+    <text class="lab-lite" x="720" y="1014">罗纹双层一起缝，拉伸均匀；宽度按收口围 ×0.8</text>
+    <text class="lab-lite" x="720" y="1036">袖口 26 ｜ 裤口 30 ｜ 领口 72</text>
+  </g>
+
+  <!-- ⑦ 前襟搭门 -->
+  <g id="asPlacket">
+    <text class="lab-b" x="30" y="1140">⑦ 前襟搭门</text>
+    <path d="M60 1174 L360 1174 L360 1414 L60 1414 Z" fill="#f3eadb" stroke="#c6ad8b" stroke-width="2"/>
+    <rect x="188" y="1174" width="44" height="240" fill="#e6d4ba" stroke="#c6ad8b" stroke-width="2"/>
+    <path d="M188 1174 V1414" stroke="#37637a" stroke-width="4" stroke-dasharray="8 5"/>
+    <path d="M232 1174 V1414" stroke="#37637a" stroke-width="4" stroke-dasharray="8 5"/>
+    <circle cx="210" cy="1224" r="8" fill="#a0522d"/>
+    <circle cx="210" cy="1284" r="8" fill="#a0522d"/>
+    <circle cx="210" cy="1344" r="8" fill="#a0522d"/>
+    <circle cx="210" cy="1404" r="8" fill="#a0522d"/>
+    <text class="lab-lite" x="60" y="1460">两条搭门条 40×6 夹住开口，缝完翻正压明线，再装扣</text>
+  </g>
+
+  <!-- ============ ⑧ 连帽 ============ -->
+  <g id="asHood">
+    <text class="lab-b" x="720" y="1140">⑧ 连帽</text>
+    <path d="M840 1180 C900 1180 950 1240 950 1310 C950 1370 920 1404 870 1416
+             C844 1400 828 1372 820 1344 C806 1336 794 1324 786 1310
+             C800 1290 812 1266 818 1240 C824 1208 830 1186 840 1180 Z"
+      fill="#f6ecd9" stroke="#d3b98f" stroke-width="2"/>
+    <path d="M840 1180 C850 1260 850 1340 870 1416" fill="none" stroke="#c6ad8b" stroke-width="2" stroke-dasharray="6 5"/>
+    <text class="lab-lite" x="866" y="1200">后中缝</text>
+    <path d="M760 1430 L980 1430 L980 1560 L760 1560 Z" fill="#f3eadb" stroke="#c6ad8b" stroke-width="2"/>
+    <path d="M760 1430 L980 1430" stroke="#5f7350" stroke-width="4" stroke-dasharray="8 5"/>
+    <circle cx="840" cy="1430" r="6" fill="#5f7350"/>
+    <circle cx="880" cy="1430" r="6" fill="#5f7350"/>
+    <text class="lab-lite" x="720" y="1590">帽子两片先拼后中缝，再把帽口对准领口缝一圈</text>
+  </g>
+</svg>

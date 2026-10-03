@@ -1,0 +1,197 @@
+<svg id="piecesArt" viewBox="0 0 1140 1900" role="img" aria-label="裁片详图：前后身、袖子、裤腿、帽子的长宽尺寸、深度与角度标注">
+  <defs>
+    <pattern id="paq" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path class="q" d="M0 0V16"/><path class="q" d="M0 0H16"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 8 8" refX="6.6" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#37637a"/>
+    </marker>
+    <marker id="arrowAng" viewBox="0 0 8 8" refX="6.6" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#5f7350"/>
+    </marker>
+  </defs>
+  <rect width="1140" height="1900" fill="#fffdf8"/>
+  <text class="lab-lite" x="20" y="28">单位：cm ｜ 全部为单层净尺寸，裁布时每边另加 1.5cm 缝份 ｜ 绿色标注为角度</text>
+
+  <!-- ===================== 前后身（10px = 1cm） ===================== -->
+  <g id="pieceBody">
+    <text class="lab-b" x="40" y="72">前身片 / 后身片（展平画在一起，中间是肩线）</text>
+    <text class="lab-lite" x="40" y="92">前片：前领深 9 ｜ 后片：后领深 3 ｜ 两片同宽同长，各裁 1 片 ｜ 图中 10px = 1cm</text>
+
+    <!-- front: 130→560 = 43cm；肩线到腋下 215px = 21.5cm -->
+    <path class="ln" id="bodyFrontOutline"
+      d="M130 300 L560 300 L560 390 L560 515 L150 723 L500 723 L500 820 L130 820 Z"
+      fill="#f3eadb" stroke="#c6ad8b" stroke-width="2.5"/>
+    <path id="bodyFrontQuilt"
+      d="M130 300 L560 300 L560 390 L560 515 L150 723 L500 723 L500 820 L130 820 Z"
+      fill="url(#paq)" opacity=".7"/>
+
+    <!-- back: 500→930 = 43cm；后领中心 30px = 3cm -->
+    <path class="ln" id="bodyBackOutline"
+      d="M500 300 L712 300 L712 330 L930 330 L930 515 L910 723 L500 723 L500 820 L930 820 Z"
+      fill="#f3eadb" stroke="#c6ad8b" stroke-width="2.5"/>
+    <path id="bodyBackQuilt"
+      d="M500 300 L712 300 L712 330 L930 330 L930 515 L910 723 L500 723 L500 820 L930 820 Z"
+      fill="url(#paq)" opacity=".7"/>
+
+    <path d="M500 300 L500 820" stroke="#cbbca4" stroke-width="2.5" stroke-dasharray="8 6"/>
+    <text class="lab-lite" x="508" y="560">肩线 / 对折中心线</text>
+    <text class="dim" x="300" y="145">前身片（领口开得深）</text>
+    <text class="dim" x="700" y="145">后身片（后领浅）</text>
+
+    <!-- widths -->
+    <g class="dimline">
+      <path d="M110 300 H130"/><path d="M110 500 H130"/>
+      <path d="M116 300 V500" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+    <text class="dim" x="88" y="400" transform="rotate(-90 88 400)">半胸宽 42</text>
+    <g class="dimline">
+      <path d="M110 820 H150"/><path d="M150 860 H500"/><path d="M500 860 H790"/><path d="M790 860 H830"/>
+    </g>
+    <text class="dim" x="290" y="880">下摆 35（前片半幅）</text>
+    <text class="dim" x="640" y="880">下摆 35（后片半幅）</text>
+    <g class="dimline">
+      <path d="M470 300 H470"/><path d="M470 300 H470"/>
+      <path d="M470 300 V390" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+    <text class="dim" x="416" y="350">前领深 9</text>
+    <g class="dimline">
+      <path d="M130 240 H130"/><path d="M130 300 V474" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+    <text class="dim" x="48" y="392" transform="rotate(-90 48 392)">袖窿深 21.5</text>
+    <g class="dimline">
+      <path d="M510 300 H560" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+    <text class="dim" x="548" y="292">前领深 9</text>
+    <g class="dimline">
+      <path d="M486 300 H500" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+    <text class="dim" x="470" y="318">后领深 3</text>
+    <g class="dimline">
+      <path d="M130 260 H480" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+    <text class="dim" x="270" y="252">肩宽 35（领口到上袖点）</text>
+
+    <!-- angles -->
+    <path d="M320 300 C300 302 284 305 274 308" stroke="#5f7350" stroke-width="1.4" fill="none"/>
+    <text class="lab-lite" x="252" y="296" fill="#5f7350">肩斜 34°</text>
+    <path d="M130 380 Q160 380 160 410 Q160 440 150 456" stroke="#5f7350" stroke-width="1.4" fill="none"/>
+    <text class="lab-lite" x="34" y="470" fill="#5f7350">腋下 90°（圆顺）</text>
+  </g>
+
+  <line x1="20" y1="930" x2="1120" y2="930" stroke="#e0d5c3" stroke-width="1.5" stroke-dasharray="10 8"/>
+
+  <!-- ===================== 袖子（8px = 1cm） ===================== -->
+  <g id="pieceSleeves">
+    <text class="lab-b" x="40" y="980">袖子 × 2（左右对称两片，别裁成一样方向）</text>
+    <text class="lab-lite" x="40" y="1000">袖长 32.7（肩到袖口）｜ 袖根 28 ｜ 腕口 20 ｜ 袖口边与侧边 90° ｜ 图中 8px = 1cm</text>
+    <path class="ln" id="sleeveOutline"
+      d="M220 1020 L444 1020 L316 1263 L220 1263 Z"
+      fill="#eef1e6" stroke="#9aab86" stroke-width="2.5"/>
+    <path id="sleeveQuilt" d="M220 1020 L444 1020 L316 1263 L220 1263 Z"
+      fill="url(#paq)" opacity=".45"/>
+
+    <g class="dimline">
+      <path d="M200 1020 H220"/><path d="M200 1020 H444"/>
+      <path d="M200 1020 H444" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+    <text class="dim" x="270" y="1014">袖根 28</text>
+    <g class="dimline">
+      <path d="M268 1263 H268"/><path d="M268 1263 H268"/>
+      <path d="M220 1263 H316" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+    <text class="dim" x="228" y="1278">腕口边 12（缝成筒即约 20）</text>
+    <g class="dimline">
+      <path d="M180 1020 H180"/><path d="M180 1020 H180"/>
+      <path d="M180 1020 V1263" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+    <text class="dim" x="120" y="1150" transform="rotate(-90 120 1150)">袖片高 30.4</text>
+
+    <path d="M260 1020 A44 44 0 0 0 251 1051" stroke="#5f7350" stroke-width="1.4" fill="none" marker-end="url(#arrowAng)"/>
+    <text class="lab-lite" x="186" y="1064" fill="#5f7350">90°</text>
+    <path d="M318 1263 A50 50 0 0 1 301 1221" stroke="#5f7350" stroke-width="1.4" fill="none"/>
+    <text class="lab-lite" x="322" y="1226" fill="#5f7350">90°</text>
+    <text class="dim" x="356" y="1300">袖口边与侧边垂直</text>
+    <text class="lab-lite" x="40" y="1352">这两片左右对称裁，裁好后重叠在一起检查形状是否一致。</text>
+  </g>
+
+  <!-- ===================== 裤腿（8px = 1cm） ===================== -->
+  <g id="pieceLegs">
+    <text class="lab-b" x="560" y="980">裤腿片 × 2</text>
+    <text class="lab-lite" x="560" y="1000">腿长 46 ｜ 腿根 32 ｜ 踝口 24 ｜ 侧边斜 84° ｜ 图中 8px = 1cm</text>
+    <path class="ln" id="legOutline"
+      d="M580 1020 L836 1020 L804 1388 L612 1388 Z"
+      fill="#eef1e6" stroke="#9aab86" stroke-width="2.5"/>
+    <path id="legQuilt" d="M580 1020 L836 1020 L804 1388 L612 1388 Z"
+      fill="url(#paq)" opacity=".45"/>
+    <g class="dimline">
+      <path d="M552 1020 H572"/><path d="M552 1020 H828"/>
+      <path d="M552 1020 H828" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+    <text class="dim" x="660" y="1014">腿根 32</text>
+    <g class="dimline">
+      <path d="M612 1410 H612"/><path d="M612 1410 H804"/>
+      <path d="M612 1410 H804" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+    <text class="dim" x="660" y="1434">踝口 24</text>
+    <g class="dimline">
+      <path d="M548 1020 H520"/><path d="M548 1020 H520"/>
+      <path d="M528 1020 V1388" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+    <text class="dim" x="506" y="1220" transform="rotate(-90 506 1220)">腿长 46</text>
+    <path d="M572 1062 A44 44 0 0 0 536 1058" stroke="#5f7350" stroke-width="1.4" fill="none"/>
+    <text class="lab-lite" x="500" y="1054" fill="#5f7350">84°</text>
+    <path d="M828 1062 A44 44 0 0 1 793 1058" stroke="#5f7350" stroke-width="1.4" fill="none"/>
+    <text class="lab-lite" x="840" y="1054" fill="#5f7350">84°</text>
+    <text class="lab-lite" x="548" y="1478">两条腿片完全一样，裁 2 片；上下别裁反。</text>
+  </g>
+
+  <line x1="20" y1="1520" x2="1120" y2="1520" stroke="#e0d5c3" stroke-width="1.5" stroke-dasharray="10 8"/>
+
+  <!-- ===================== 帽子 + 小件 ===================== -->
+  <g id="pieceHood">
+    <text class="lab-b" x="40" y="1450">帽子侧片 × 2（左右对称，中间拼后中缝）</text>
+    <text class="lab-lite" x="40" y="1470">高 26 ｜ 宽 24 ｜ 领口边 9 ｜ 后中缝弧线长约 26</text>
+    <path class="ln" id="hoodOutline"
+      d="M90 1520 C150 1520 200 1570 200 1640 C200 1695 172 1730 126 1742
+         C100 1727 84 1702 78 1674 C64 1668 54 1658 48 1646
+         C62 1628 74 1606 80 1582 C84 1554 86 1530 90 1520 Z"
+      fill="#f6ecd9" stroke="#d3b98f" stroke-width="2.5"/>
+    <path d="M90 1520 C150 1520 200 1570 200 1640 C200 1695 172 1730 126 1742
+             C100 1727 84 1702 78 1674 C64 1668 54 1658 48 1646
+             C62 1628 74 1606 80 1582 C84 1554 86 1530 90 1520 Z"
+      fill="url(#paq)" opacity=".5"/>
+    <g class="dimline">
+      <path d="M48 1500 H48"/><path d="M48 1504 H200"/>
+      <path d="M48 1504 H200" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+    <text class="dim" x="70" y="1496">帽宽 24</text>
+    <g class="dimline">
+      <path d="M250 1504 H228"/><path d="M250 1504 H250"/>
+      <path d="M250 1504 V1742" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    </g>
+    <text class="dim" x="258" y="1628" transform="rotate(-90 258 1628)">帽高 26</text>
+    <text class="lab-lite" x="40" y="1622">领口边 9</text>
+    <text class="lab-lite" x="40" y="1796">两片沿后中缝缝合，缝完是一个完整的头罩。</text>
+  </g>
+
+  <g id="pieceSmall">
+    <text class="lab-b" x="40" y="1810">小件（裆片 / 罗纹 / 搭门）</text>
+
+    <text class="lab" x="60" y="1852">裆部连接片 × 2</text>
+    <rect x="70" y="1866" width="70" height="24" rx="4" fill="#f3eadb" stroke="#c6ad8b" stroke-width="2"/>
+    <text class="lab-lite" x="156" y="1885">宽 14 × 长 16，前后各 1 片</text>
+
+    <text class="lab" x="380" y="1852">领口罗纹</text>
+    <rect x="380" y="1866" width="150" height="26" rx="4" fill="#e3ebd8" stroke="#8fa179" stroke-width="2"/>
+    <text class="lab-lite" x="544" y="1885">38 + 34 ×14，两段拼成 72 对折</text>
+
+    <text class="lab" x="680" y="1852">袖口罗纹 × 2</text>
+    <rect x="680" y="1866" width="90" height="26" rx="4" fill="#e3ebd8" stroke="#8fa179" stroke-width="2"/>
+    <text class="lab-lite" x="784" y="1885">26 × 8</text>
+
+    <text class="lab" x="860" y="1852">裤口罗纹 × 2</text>
+    <rect x="860" y="1866" width="90" height="26" rx="4" fill="#e3ebd8" stroke="#8fa179" stroke-width="2"/>
+    <text class="lab-lite" x="964" y="1885">30 × 8</text>
+  </g>
+</svg>
